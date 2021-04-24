@@ -1,0 +1,8 @@
+{
+  "extension": [".js", ".jsx", ".ts", ".tsx"],
+  "include": ["src/**/*.{js,jsx,ts,tsx}"],
+  "all": true,
+  "sourceMap": false,
+  "instrument": false,
+  "per-file": true
+}

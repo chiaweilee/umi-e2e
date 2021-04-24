@@ -3,10 +3,7 @@
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
-    "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "test": "NODE_ENV=e2e $(npm bin)/cypress run && nyc report --reporter=lcov --reporter=text"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -25,10 +22,15 @@
     "umi": "^3.4.11"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.4",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/test": "^3.4.11",
+    "babel-plugin-istanbul": "5.2.0",
+    "cypress": "^7.1.0",
+    "istanbul-lib-coverage": "^3.0.0",
     "lint-staged": "^10.0.7",
+    "nyc": "^15.1.0",
     "prettier": "^2.2.0",
     "react": "17.x",
     "react-dom": "17.x",
